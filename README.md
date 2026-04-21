@@ -2,6 +2,7 @@
 源代码：https://github.com/roselynh100/melon-camper
 
 如果不需要选区，只想有票的话直接用这位大神的源代码即可，也是一位地租妈膜拜🫡，如果想选区请往下阅读，任何步骤看不懂或报错直接询问AI。
+我自己的系统是MacOS所以mac用户直接跟着步骤走即可，如果是Windows用户可以直接拿去问AI。
 
 ## 🛠️ 准备工作
 <img width="553" height="324" alt="截屏2026-04-21 下午4 35 16" src="https://github.com/user-attachments/assets/253d0196-03ff-4391-9284-b8d2fee76f18" />
