@@ -48,5 +48,4 @@ const myTargetSections = ["Sec 11", "Sec 12"]; // 填入你想要的区域关键
 if (!myTargetSections.some(target => secName.includes(target))) {
     continue; 
 }
-<img width="1201" height="796" alt="截屏2026-04-21 下午5 03 00" src="https://github.com/user-attachments/assets/14fbed63-5c69-43a8-a10d-4ac35440af97" />
-
+<img width="1201" height="796" alt="截屏2026-04-21 下午5 03 00" src="https://github.com/user-attachments/assets/16bf40e5-4e64-4917-9076-81e9893bd13f" />
