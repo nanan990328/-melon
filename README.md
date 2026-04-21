@@ -2,6 +2,8 @@
 #源代码：
 
 ## 🛠️ 准备工作
+<img width="553" height="324" alt="截屏2026-04-21 下午4 35 16" src="https://github.com/user-attachments/assets/253d0196-03ff-4391-9284-b8d2fee76f18" />
+
 
 ### 1. 环境安装 (Bun)
 本项目运行需要 Bun 环境。
@@ -15,7 +17,7 @@
 - 点击本仓库 `Code` -> `Download ZIP` 并解压。
 - **安装依赖**: 在文件夹内打开终端，运行：
   `bun install`
-- **下载自动化浏览器**: (如果报错找不到 Chrome，请运行此命令，建议全局梯子)
+- **下载自动化浏览器**: (如果下载很慢，建议梯子改成全局模式)
   `bun x puppeteer browsers install chrome`
 
 ### 3. 配置文件
