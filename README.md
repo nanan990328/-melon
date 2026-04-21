@@ -6,6 +6,7 @@
 ## 🛠️ 准备工作
 <img width="553" height="324" alt="截屏2026-04-21 下午4 35 16" src="https://github.com/user-attachments/assets/253d0196-03ff-4391-9284-b8d2fee76f18" />
 
+<img width="1201" height="796" alt="截屏2026-04-21 下午5 03 00" src="https://github.com/user-attachments/assets/16bf40e5-4e64-4917-9076-81e9893bd13f" />
 
 ### 1. 环境安装 (Bun)
 本项目运行需要 Bun 环境。
@@ -17,7 +18,7 @@
 
 ### 2. 下载与初始化
 - 点击本仓库 `Code` -> `Download ZIP` 并解压。
-- **安装依赖**: 在文件夹内打开终端，运行：
+- **安装依赖**: 在文件夹内打开终端（这一块有点难，如果不会查找文件路径的话，在终端里输入cd然后空格把文件夹直接拖进去回车即可），然后运行：
   `bun install`
 - **下载自动化浏览器**: (如果下载很慢，建议梯子改成全局模式)
   `bun x puppeteer browsers install chrome`
@@ -41,11 +42,10 @@
 - `LOOPS`: 循环次数。建议设为 `999999`，但注意次数过多可能被官方系统暂时阻拦。
 
 ### 2. `camp.ts` (筛选逻辑)
-如果你只想刷特定区域（例如 Sec 11-16），请修改以下代码块：
+如果你只想刷特定区域（例如Sec 11），请修改以下代码块：
 ```typescript
 const myTargetSections = ["Sec 11", "Sec 12"]; // 填入你想要的区域关键词
 
 if (!myTargetSections.some(target => secName.includes(target))) {
     continue; 
 }
-<img width="1201" height="796" alt="截屏2026-04-21 下午5 03 00" src="https://github.com/user-attachments/assets/16bf40e5-4e64-4917-9076-81e9893bd13f" />
