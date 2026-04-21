@@ -1,55 +1,46 @@
-# -melon自用（有票后会跳转油管报警但需手动支付）
+# -melon自用（有票后会跳转报警但需手动支付）
 #源代码：
 
 ## 🛠️ 准备工作
-<img width="553" height="324" alt="截屏2026-04-21 下午4 35 16" src="https://github.com/user-attachments/assets/9169e05a-2eec-42be-8b78-20587d294512" />
 
-1. **安装环境**：安装 Bun：
-如果你是 Mac 或 Linux：打开“终端”（Terminal），输入并回车：
-curl -fsSL https://bun.sh/install | bash
-如果你是 Windows：打开 PowerShell，输入并回车：
-powershell -c "irm bun.sh/install.ps1 | iex"
-在终端输入 bun --version。如果出现了版本号，就说明安装成功！
+### 1. 环境安装 (Bun)
+本项目运行需要 Bun 环境。
+- **Mac / Linux**: 打开终端（Terminal），输入：
+  `curl -fsSL https://bun.sh/install | bash`
+- **Windows**: 打开 PowerShell，输入：
+  `powershell -c "irm bun.sh/install.ps1 | iex"`
+- **验证**: 输入 `bun --version`，看到版本号即成功。
 
-3. **下载代码**：点击 GitHub 的 `Code` -> `Download ZIP` 并解压。
-4. 在文件夹里找到 login.json。
-复制并粘贴一份，把新文件的名字改成 credentials.json。
-用记事本或编辑器打开它，把里面的占位符改为你真实的账号、密码等信息。
+### 2. 下载与初始化
+- 点击本仓库 `Code` -> `Download ZIP` 并解压。
+- **安装依赖**: 在文件夹内打开终端，运行：
+  `bun install`
+- **下载自动化浏览器**: (如果报错找不到 Chrome，请运行此命令，建议全局梯子)
+  `bun x puppeteer browsers install chrome`
 
-5. **准备 Cookie**：
-   - 创建 Cookie 文件：
-新建一个空的文本文件，命名为 cookies.json（注意后缀是 .json 而不是 .txt）。
-MAC：打开文本编辑，新建文稿，制作纯文本，保存后改文件后缀即可；Windows请询问AI
+### 3. 配置文件
+- **账号信息**: 找到 `login.json`，复制一份并重命名为 `credentials.json`，填入你的账号密码。
+- **Cookie 准备**: 
+  - 新建一个文件叫 `cookies.json`。
+  - **Mac 用户**: 使用“文本编辑”，菜单栏选择“格式” -> “制作纯文本”，保存后手动将 `.txt` 后缀改为 `.json`。
 
-## 🚀 核心配置说明
+---
 
-只需修改项目中的两个文件：编辑器（Visual Studio Code） MAC可以直接去官网下载一个
+## 🚀 核心配置指南
 
-### 1. `shared.ts` (基础配置)
-在这个文件里，你可以设置：
-* `CONCERT_URL`: 演唱会的详情页链接。
-* `NIGHT`: 第几个场次（0 代表第一场，1 代表第二场）。
-* `CHECK_BEST`: **建议设为 `true`**，确保脚本会检查 VIP/Floor 等高级区域。
-* `LOOPS`: 循环次数。建议设为 `999999` 实现长效挂机。（但次数太多会被melon卡出去）
+你只需要通过 **Visual Studio Code (VS Code)** 修改以下两个文件：
 
-### 2. `camp.ts` (逻辑核心)
-如果你只想刷特定的区域，直接在camp.ts里修改
+### 1. `shared.ts` (全局设置)
+- `CONCERT_URL`: 演唱会详情页链接。
+- `NIGHT`: 场次索引（0 为第一场，1 为第二场）。
+- `CHECK_BEST`: **建议设为 `true`**，否则脚本会跳过最好的区域。
+- `LOOPS`: 循环次数。建议设为 `999999`，但注意次数过多可能被官方系统暂时阻拦。
 
+### 2. `camp.ts` (筛选逻辑)
+如果你只想刷特定区域（例如 Sec 11-16），请修改以下代码块：
 ```typescript
-const myTargetSections = ["你想要的区域"];
+const myTargetSections = ["Sec 11", "Sec 12"]; // 填入你想要的区域关键词
 
 if (!myTargetSections.some(target => secName.includes(target))) {
     continue; 
 }
-如果只想刷到票，直接使用源代码中的camp.ts即可
-
-###运行操作
-在终端里先输入 cd （注意 cd 后面有一个空格，不要按回车）。
-
-从桌面上或者 Finder 里，用鼠标按住你那个抢票代码的文件夹。
-
-直接把它拖进 VS Code 的终端黑色区域里。
-
-它会自动变成一段路径（类似 /Users/nannan/Downloads/xxx），这时按回车。
-
-现在输入 bun install。
