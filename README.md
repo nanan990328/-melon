@@ -1,5 +1,6 @@
 # -melon自用（有票后会跳转报警但需手动支付）
-#源代码：
+#源代码：https://github.com/roselynh100/melon-camper
+如果不需要选区，只想有票的话直接用这位大神的源代码即可。也是一位地租妈膜拜🫡，如果想选区请往下阅读，任何步骤看不懂或报错直接询问AI。
 
 ## 🛠️ 准备工作
 <img width="553" height="324" alt="截屏2026-04-21 下午4 35 16" src="https://github.com/user-attachments/assets/253d0196-03ff-4391-9284-b8d2fee76f18" />
@@ -30,7 +31,7 @@
 
 ## 🚀 核心配置指南
 
-你只需要通过 **Visual Studio Code (VS Code)** 修改以下两个文件：
+你只需要通过 **Visual Studio Code (VS Code)** 【MAC可直接去官网下载】修改以下两个文件：
 
 ### 1. `shared.ts` (全局设置)
 - `CONCERT_URL`: 演唱会详情页链接。
@@ -46,3 +47,5 @@ const myTargetSections = ["Sec 11", "Sec 12"]; // 填入你想要的区域关键
 if (!myTargetSections.some(target => secName.includes(target))) {
     continue; 
 }
+<img width="1201" height="796" alt="截屏2026-04-21 下午5 03 00" src="https://github.com/user-attachments/assets/14fbed63-5c69-43a8-a10d-4ac35440af97" />
+
